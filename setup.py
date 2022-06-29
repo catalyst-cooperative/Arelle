@@ -28,16 +28,6 @@ import datetime
 from distutils.command.build_py import build_py as _build_py
 
 
-def get_version():
-    """
-    Retrieving version string from git tag using Github Actions environment variables.
-    Returns 0.0.0 if no tag included.
-    """
-    github_ref_type = os.getenv('GITHUB_REF_TYPE')
-    github_ref_name = os.getenv('GITHUB_REF_NAME')
-    return github_ref_name if github_ref_type == 'tag' else '0.0.0'
-
-
 
 options = {}
 cxFreezeExecutables = []
@@ -334,8 +324,9 @@ else:
 
 timestamp = datetime.datetime.utcnow()
 setup(
-    name='arelle-release',
-    version=get_version(),
+    name='catalystcoop.arelle_mirror',
+    setup_requires=["setuptools_scm", "lxml"],
+    use_scm_version=True,
     description='An open source XBRL platform',
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
@@ -367,7 +358,6 @@ setup(
             'arelle-gui=arelle.CntlrWinMain:main',
         ]
     },
-    setup_requires=['lxml'],
     # install_requires specifies a list of package dependencies that are
     # installed when 'python setup.py install' is run. On Linux/Mac systems
     # this also allows installation directly from the github repository
