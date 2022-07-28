@@ -3,6 +3,10 @@
 </div>
 
 
+## Note
+This is a mirror of Arelle managed by [Catalyst Cooperative](https://github.com/catalyst-cooperative)
+for out internal packaging uses only. We do not maintain or support Arelle. 
+
 
 [Arelle](https://arelle.org/arelle/) is an end-to-end open source XBRL platform,
 which provides the XBRL community with an easy to use set of tools.  It supports
