@@ -170,7 +170,7 @@ if sys.platform in ('darwin', 'linux2', 'linux', 'sunos5'):
         'rdflib.plugins.sparql',
         'rdflib.plugins.stores',
         'isodate', 'regex', 'gzip', 'zlib', 'aniso8601', 'graphviz', 'holidays',
-        'openpyxl', 'PIL', # to install PIL it's named Pillow
+        'PIL', # to install PIL it's named Pillow
         'pycountry' # to install pycountry: pip uninstall -y pycountry ; pip install --no-cache --use-pep517 pycountry
         # only installed by end-users when using security plugins: 'Crypto', 'Crypto.Cipher', 'Crypto.Cipher.AES' # install pycrypto not another crypto module
         #'google_api_python_client', 'oauth2client', 'six', 'httplib2', 'uritemplate', 'pyasn1', 'rsa', 'pyasn1_modules' # google-api-python-client
@@ -363,7 +363,7 @@ setup(
     # this also allows installation directly from the github repository
     # (using 'pip install -e git+git://github.com/rheimbuchArelle.git#egg=Arelle')
     # and the install_requires packages are auto-installed as well.
-    install_requires=['lxml', 'isodate', 'openpyxl'],
+    install_requires=['lxml', 'isodate'],
     options=options,
     executables=cx_FreezeExecutables,
 )
