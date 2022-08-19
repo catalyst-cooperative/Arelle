@@ -61,6 +61,7 @@ def getUserLocale(localeCode=''):
                         break
                     except locale.Error:
                         pass # this one didn't work
+    # This is a change made by Catalyst Coop to avoid UnicodeDecodeError's
     # locale.setlocale(locale.LC_ALL, _STR_8BIT('C'))  # str needed for 3to2 2.7 python to work
     if conv is None: # some other issue prevents getting culture code, use 'C' defaults (no thousands sep, no currency, etc)
         conv = locale.localeconv() # use 'C' environment, e.g., en_US
